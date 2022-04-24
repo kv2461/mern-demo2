@@ -3,10 +3,12 @@ const app = express()
 const mongoose = require('mongoose')
 const UserModel = require('./models/Users')
 
+const cors = require('cors') //allows connection of api to front end without errors
+
 app.use(express.json());
 //because body is in json, we need to parse the json into an object.
 //if not done, any requests done with the body will give an error because of its json format.
-
+app.use(cors());
 
 mongoose.connect('mongodb+srv://kv2461:LTYGr2zzy86W21Hw@cluster0.htfej.mongodb.net/merntutorial?retryWrites=true&w=majority')
 
