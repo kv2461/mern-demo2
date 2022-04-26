@@ -32,7 +32,6 @@ app.post('/createUser', async (req,res) => {
     const user = req.body
     const newUser = new UserModel(user);
     await newUser.save()
-
     res.json(user) //when everything is done, return back new user created, even though it won't be used
     //just send it back so we know were getting the correct information in our backend
     //always need to use the res variable? that's what the vid said
